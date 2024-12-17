@@ -14,7 +14,7 @@ const CountryCard: React.FC<CountryCardProps> = ({ country, options, onSelect, f
     return (
         <Card style={{ margin: '16px' }}>
             <CardContent>
-                <Typography variant="h5" gutterBottom>
+                <Typography variant="h5" gutterBottom textAlign='center'>
                     {country}
                 </Typography>
                 {!imgError ? (

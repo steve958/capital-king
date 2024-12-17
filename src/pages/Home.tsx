@@ -6,7 +6,7 @@ const Home: React.FC = () => {
     const navigate = useNavigate()
 
     return (
-        <Container style={{ marginTop: '40px' }}>
+        <Container style={{ marginTop: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vw' }}>
             <Stack spacing={4} alignItems="center">
                 <Typography variant="h4">CapitalKing</Typography>
                 <Button variant="contained" color="primary" onClick={() => navigate('/game')}>
