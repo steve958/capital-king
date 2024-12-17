@@ -1,8 +1,12 @@
 export interface Country {
     country_name: string;
     capital_city: string;
-    continent: string; // new field
+    continent: string;
+    flag: string; // new field
 }
+
+// loadCountries function remains the same, just ensure JSON now contains `flag` field.
+
 
 export async function loadCountries(): Promise<Country[]> {
     const response = await fetch(new URL('../assets/data/countries.json', import.meta.url));
