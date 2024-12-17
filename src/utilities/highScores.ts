@@ -25,7 +25,7 @@ export function updateHighScores(newScore: number) {
     scores.sort((a, b) => b.score - a.score)
 
     // Keep top 10
-    const top10 = scores.slice(0, 10)
+    const top8 = scores.slice(0, 8)
 
-    saveHighScores(top10)
+    saveHighScores(top8)
 }

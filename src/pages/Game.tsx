@@ -83,7 +83,7 @@ const Game: React.FC = () => {
         return (
             <Container style={{ marginTop: "40px" }}>
                 <Card>
-                    <CardContent>
+                    <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                         {winner ? (
                             <Typography variant="h5">
                                 Winner! Perfect Score: {score}
@@ -93,7 +93,7 @@ const Game: React.FC = () => {
                                 Game Over! Your Score: {score}
                             </Typography>
                         )}
-                        <Button variant="contained" onClick={() => navigate("/")}>
+                        <Button variant="contained" onClick={() => navigate("/")} sx={{ width: 'fit-content' }} >
                             Back to Home
                         </Button>
                     </CardContent>
@@ -118,7 +118,7 @@ const Game: React.FC = () => {
                         fontSize: "95px",
                         marginTop: "20px",
                         transition: "all 0.5s ease-in-out",
-                        color: seconds <= 2 ? "red" : "black",
+                        color: seconds <= 2 ? "red" : "#2C86E6",
                     }}
                 >
                     {seconds}

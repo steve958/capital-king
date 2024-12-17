@@ -19,7 +19,7 @@ const HighScores: React.FC = () => {
                     </ListItem>
                 ))}
             </List>
-            <Button variant="contained" onClick={() => navigate('/')} sx={{ width: 'fit-content' }}>Back to Home</Button>
+            <Button variant="contained" onClick={() => navigate('/')} sx={{ width: 'fit-content', marginBottom: '15px' }}>Back to Home</Button>
         </Container>
     )
 }
