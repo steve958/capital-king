@@ -1,790 +1,987 @@
 [
   {
     "country_name": "Afghanistan",
-    "capital_city": "Kabul"
+    "capital_city": "Kabul",
+    "continent": "Asia"
   },
   {
     "country_name": "Albania",
-    "capital_city": "Tirana"
+    "capital_city": "Tirana",
+    "continent": "Europe"
   },
   {
     "country_name": "Algeria",
-    "capital_city": "Algiers"
+    "capital_city": "Algiers",
+    "continent": "Africa"
   },
   {
     "country_name": "Andorra",
-    "capital_city": "Andorra la Vella"
+    "capital_city": "Andorra la Vella",
+    "continent": "Europe"
   },
   {
     "country_name": "Angola",
-    "capital_city": "Luanda"
+    "capital_city": "Luanda",
+    "continent": "Africa"
   },
   {
     "country_name": "Antigua and Barbuda",
-    "capital_city": "St. John's"
+    "capital_city": "St. John's",
+    "continent": "North America"
   },
   {
     "country_name": "Argentina",
-    "capital_city": "Buenos Aires"
+    "capital_city": "Buenos Aires",
+    "continent": "South America"
   },
   {
     "country_name": "Armenia",
-    "capital_city": "Yerevan"
+    "capital_city": "Yerevan",
+    "continent": "Asia"
   },
   {
     "country_name": "Australia",
-    "capital_city": "Canberra"
+    "capital_city": "Canberra",
+    "continent": "Oceania"
   },
   {
     "country_name": "Austria",
-    "capital_city": "Vienna"
+    "capital_city": "Vienna",
+    "continent": "Europe"
   },
   {
     "country_name": "Azerbaijan",
-    "capital_city": "Baku"
+    "capital_city": "Baku",
+    "continent": "Asia"
   },
   {
     "country_name": "Bahamas",
-    "capital_city": "Nassau"
+    "capital_city": "Nassau",
+    "continent": "North America"
   },
   {
     "country_name": "Bahrain",
-    "capital_city": "Manama"
+    "capital_city": "Manama",
+    "continent": "Asia"
   },
   {
     "country_name": "Bangladesh",
-    "capital_city": "Dhaka"
+    "capital_city": "Dhaka",
+    "continent": "Asia"
   },
   {
     "country_name": "Barbados",
-    "capital_city": "Bridgetown"
+    "capital_city": "Bridgetown",
+    "continent": "North America"
   },
   {
     "country_name": "Belarus",
-    "capital_city": "Minsk"
+    "capital_city": "Minsk",
+    "continent": "Europe"
   },
   {
     "country_name": "Belgium",
-    "capital_city": "Brussels"
+    "capital_city": "Brussels",
+    "continent": "Europe"
   },
   {
     "country_name": "Belize",
-    "capital_city": "Belmopan"
+    "capital_city": "Belmopan",
+    "continent": "North America"
   },
   {
     "country_name": "Benin",
-    "capital_city": "Porto-Novo"
+    "capital_city": "Porto-Novo",
+    "continent": "Africa"
   },
   {
     "country_name": "Bhutan",
-    "capital_city": "Thimphu"
+    "capital_city": "Thimphu",
+    "continent": "Asia"
   },
   {
     "country_name": "Bolivia",
-    "capital_city": "La Paz"
+    "capital_city": "La Paz",
+    "continent": "South America"
   },
   {
     "country_name": "Bosnia and Herzegovina",
-    "capital_city": "Sarajevo"
+    "capital_city": "Sarajevo",
+    "continent": "Europe"
   },
   {
     "country_name": "Botswana",
-    "capital_city": "Gaborone"
+    "capital_city": "Gaborone",
+    "continent": "Africa"
   },
   {
     "country_name": "Brazil",
-    "capital_city": "Brasília"
+    "capital_city": "Brasília",
+    "continent": "South America"
   },
   {
     "country_name": "Brunei",
-    "capital_city": "Bandar Seri Begawan"
+    "capital_city": "Bandar Seri Begawan",
+    "continent": "Asia"
   },
   {
     "country_name": "Bulgaria",
-    "capital_city": "Sofia"
+    "capital_city": "Sofia",
+    "continent": "Europe"
   },
   {
     "country_name": "Burkina Faso",
-    "capital_city": "Ouagadougou"
+    "capital_city": "Ouagadougou",
+    "continent": "Africa"
   },
   {
     "country_name": "Burundi",
-    "capital_city": "Gitega"
+    "capital_city": "Gitega",
+    "continent": "Africa"
   },
   {
     "country_name": "Côte d'Ivoire",
-    "capital_city": "Yamoussoukro"
+    "capital_city": "Yamoussoukro",
+    "continent": "Africa"
   },
   {
     "country_name": "Cabo Verde",
-    "capital_city": "Praia"
+    "capital_city": "Praia",
+    "continent": "Africa"
   },
   {
     "country_name": "Cambodia",
-    "capital_city": "Phnom Penh"
+    "capital_city": "Phnom Penh",
+    "continent": "Asia"
   },
   {
     "country_name": "Cameroon",
-    "capital_city": "Yaoundé"
+    "capital_city": "Yaoundé",
+    "continent": "Africa"
   },
   {
     "country_name": "Canada",
-    "capital_city": "Ottawa"
+    "capital_city": "Ottawa",
+    "continent": "North America"
   },
   {
     "country_name": "Central African Republic",
-    "capital_city": "Bangui"
+    "capital_city": "Bangui",
+    "continent": "Africa"
   },
   {
     "country_name": "Chad",
-    "capital_city": "N'Djamena"
+    "capital_city": "N'Djamena",
+    "continent": "Africa"
   },
   {
     "country_name": "Chile",
-    "capital_city": "Santiago"
+    "capital_city": "Santiago",
+    "continent": "South America"
   },
   {
     "country_name": "China",
-    "capital_city": "Beijing"
+    "capital_city": "Beijing",
+    "continent": "Asia"
   },
   {
     "country_name": "Colombia",
-    "capital_city": "Bogotá"
+    "capital_city": "Bogotá",
+    "continent": "South America"
   },
   {
     "country_name": "Comoros",
-    "capital_city": "Moroni"
+    "capital_city": "Moroni",
+    "continent": "Africa"
   },
   {
     "country_name": "Congo (Republic of the)",
-    "capital_city": "Brazzaville"
+    "capital_city": "Brazzaville",
+    "continent": "Africa"
   },
   {
     "country_name": "Costa Rica",
-    "capital_city": "San José"
+    "capital_city": "San José",
+    "continent": "North America"
   },
   {
     "country_name": "Croatia",
-    "capital_city": "Zagreb"
+    "capital_city": "Zagreb",
+    "continent": "Europe"
   },
   {
     "country_name": "Cuba",
-    "capital_city": "Havana"
+    "capital_city": "Havana",
+    "continent": "North America"
   },
   {
     "country_name": "Cyprus",
-    "capital_city": "Nicosia"
+    "capital_city": "Nicosia",
+    "continent": "Europe"
   },
   {
     "country_name": "Czech Republic",
-    "capital_city": "Prague"
+    "capital_city": "Prague",
+    "continent": "Europe"
   },
   {
     "country_name": "Democratic Republic of the Congo",
-    "capital_city": "Kinshasa"
+    "capital_city": "Kinshasa",
+    "continent": "Africa"
   },
   {
     "country_name": "Denmark",
-    "capital_city": "Copenhagen"
+    "capital_city": "Copenhagen",
+    "continent": "Europe"
   },
   {
     "country_name": "Djibouti",
-    "capital_city": "Djibouti"
+    "capital_city": "Djibouti",
+    "continent": "Africa"
   },
   {
     "country_name": "Dominica",
-    "capital_city": "Roseau"
+    "capital_city": "Roseau",
+    "continent": "North America"
   },
   {
     "country_name": "Dominican Republic",
-    "capital_city": "Santo Domingo"
+    "capital_city": "Santo Domingo",
+    "continent": "North America"
   },
   {
     "country_name": "Ecuador",
-    "capital_city": "Quito"
+    "capital_city": "Quito",
+    "continent": "South America"
   },
   {
     "country_name": "Egypt",
-    "capital_city": "Cairo"
+    "capital_city": "Cairo",
+    "continent": "Africa"
   },
   {
     "country_name": "El Salvador",
-    "capital_city": "San Salvador"
+    "capital_city": "San Salvador",
+    "continent": "North America"
   },
   {
     "country_name": "Equatorial Guinea",
-    "capital_city": "Malabo"
+    "capital_city": "Malabo",
+    "continent": "Africa"
   },
   {
     "country_name": "Eritrea",
-    "capital_city": "Asmara"
+    "capital_city": "Asmara",
+    "continent": "Africa"
   },
   {
     "country_name": "Estonia",
-    "capital_city": "Tallinn"
+    "capital_city": "Tallinn",
+    "continent": "Europe"
   },
   {
     "country_name": "Eswatini",
-    "capital_city": "Mbabane"
+    "capital_city": "Mbabane",
+    "continent": "Africa"
   },
   {
     "country_name": "Ethiopia",
-    "capital_city": "Addis Ababa"
+    "capital_city": "Addis Ababa",
+    "continent": "Africa"
   },
   {
     "country_name": "Federated States of Micronesia",
-    "capital_city": "Palikir"
+    "capital_city": "Palikir",
+    "continent": "Oceania"
   },
   {
     "country_name": "Fiji",
-    "capital_city": "Suva"
+    "capital_city": "Suva",
+    "continent": "Oceania"
   },
   {
     "country_name": "Finland",
-    "capital_city": "Helsinki"
+    "capital_city": "Helsinki",
+    "continent": "Europe"
   },
   {
     "country_name": "France",
-    "capital_city": "Paris"
+    "capital_city": "Paris",
+    "continent": "Europe"
   },
   {
     "country_name": "Gabon",
-    "capital_city": "Libreville"
+    "capital_city": "Libreville",
+    "continent": "Africa"
   },
   {
     "country_name": "Gambia",
-    "capital_city": "Banjul"
+    "capital_city": "Banjul",
+    "continent": "Africa"
   },
   {
     "country_name": "Georgia",
-    "capital_city": "Tbilisi"
+    "capital_city": "Tbilisi",
+    "continent": "Asia"
   },
   {
     "country_name": "Germany",
-    "capital_city": "Berlin"
+    "capital_city": "Berlin",
+    "continent": "Europe"
   },
   {
     "country_name": "Ghana",
-    "capital_city": "Accra"
+    "capital_city": "Accra",
+    "continent": "Africa"
   },
   {
     "country_name": "Greece",
-    "capital_city": "Athens"
+    "capital_city": "Athens",
+    "continent": "Europe"
   },
   {
     "country_name": "Grenada",
-    "capital_city": "St. George's"
+    "capital_city": "St. George's",
+    "continent": "North America"
   },
   {
     "country_name": "Guatemala",
-    "capital_city": "Guatemala City"
+    "capital_city": "Guatemala City",
+    "continent": "North America"
   },
   {
     "country_name": "Guinea",
-    "capital_city": "Conakry"
+    "capital_city": "Conakry",
+    "continent": "Africa"
   },
   {
     "country_name": "Guinea-Bissau",
-    "capital_city": "Bissau"
+    "capital_city": "Bissau",
+    "continent": "Africa"
   },
   {
     "country_name": "Guyana",
-    "capital_city": "Georgetown"
+    "capital_city": "Georgetown",
+    "continent": "South America"
   },
   {
     "country_name": "Haiti",
-    "capital_city": "Port-au-Prince"
+    "capital_city": "Port-au-Prince",
+    "continent": "North America"
   },
   {
     "country_name": "Honduras",
-    "capital_city": "Tegucigalpa"
+    "capital_city": "Tegucigalpa",
+    "continent": "North America"
   },
   {
     "country_name": "Hungary",
-    "capital_city": "Budapest"
+    "capital_city": "Budapest",
+    "continent": "Europe"
   },
   {
     "country_name": "Iceland",
-    "capital_city": "Reykjavík"
+    "capital_city": "Reykjavík",
+    "continent": "Europe"
   },
   {
     "country_name": "India",
-    "capital_city": "New Delhi"
+    "capital_city": "New Delhi",
+    "continent": "Asia"
   },
   {
     "country_name": "Indonesia",
-    "capital_city": "Jakarta"
+    "capital_city": "Jakarta",
+    "continent": "Asia"
   },
   {
     "country_name": "Iran",
-    "capital_city": "Tehran"
+    "capital_city": "Tehran",
+    "continent": "Asia"
   },
   {
     "country_name": "Iraq",
-    "capital_city": "Baghdad"
+    "capital_city": "Baghdad",
+    "continent": "Asia"
   },
   {
     "country_name": "Ireland",
-    "capital_city": "Dublin"
+    "capital_city": "Dublin",
+    "continent": "Europe"
   },
   {
     "country_name": "Israel",
-    "capital_city": "Jerusalem"
+    "capital_city": "Jerusalem",
+    "continent": "Asia"
   },
   {
     "country_name": "Italy",
-    "capital_city": "Rome"
+    "capital_city": "Rome",
+    "continent": "Europe"
   },
   {
     "country_name": "Jamaica",
-    "capital_city": "Kingston"
+    "capital_city": "Kingston",
+    "continent": "North America"
   },
   {
     "country_name": "Japan",
-    "capital_city": "Tokyo"
+    "capital_city": "Tokyo",
+    "continent": "Asia"
   },
   {
     "country_name": "Jordan",
-    "capital_city": "Amman"
+    "capital_city": "Amman",
+    "continent": "Asia"
   },
   {
     "country_name": "Kazakhstan",
-    "capital_city": "Astana"
+    "capital_city": "Astana",
+    "continent": "Asia"
   },
   {
     "country_name": "Kenya",
-    "capital_city": "Nairobi"
+    "capital_city": "Nairobi",
+    "continent": "Africa"
   },
   {
     "country_name": "Kiribati",
-    "capital_city": "South Tarawa"
+    "capital_city": "South Tarawa",
+    "continent": "Oceania"
   },
   {
     "country_name": "Kosovo",
-    "capital_city": "Pristina"
+    "capital_city": "Pristina",
+    "continent": "Europe"
   },
   {
     "country_name": "Kuwait",
-    "capital_city": "Kuwait City"
+    "capital_city": "Kuwait City",
+    "continent": "Asia"
   },
   {
     "country_name": "Kyrgyzstan",
-    "capital_city": "Bishkek"
+    "capital_city": "Bishkek",
+    "continent": "Asia"
   },
   {
     "country_name": "Laos",
-    "capital_city": "Vientiane"
+    "capital_city": "Vientiane",
+    "continent": "Asia"
   },
   {
     "country_name": "Latvia",
-    "capital_city": "Riga"
+    "capital_city": "Riga",
+    "continent": "Europe"
   },
   {
     "country_name": "Lebanon",
-    "capital_city": "Beirut"
+    "capital_city": "Beirut",
+    "continent": "Asia"
   },
   {
     "country_name": "Lesotho",
-    "capital_city": "Maseru"
+    "capital_city": "Maseru",
+    "continent": "Africa"
   },
   {
     "country_name": "Liberia",
-    "capital_city": "Monrovia"
+    "capital_city": "Monrovia",
+    "continent": "Africa"
   },
   {
     "country_name": "Libya",
-    "capital_city": "Tripoli"
+    "capital_city": "Tripoli",
+    "continent": "Africa"
   },
   {
     "country_name": "Liechtenstein",
-    "capital_city": "Vaduz"
+    "capital_city": "Vaduz",
+    "continent": "Europe"
   },
   {
     "country_name": "Lithuania",
-    "capital_city": "Vilnius"
+    "capital_city": "Vilnius",
+    "continent": "Europe"
   },
   {
     "country_name": "Luxembourg",
-    "capital_city": "Luxembourg"
+    "capital_city": "Luxembourg",
+    "continent": "Europe"
   },
   {
     "country_name": "Madagascar",
-    "capital_city": "Antananarivo"
+    "capital_city": "Antananarivo",
+    "continent": "Africa"
   },
   {
     "country_name": "Malawi",
-    "capital_city": "Lilongwe"
+    "capital_city": "Lilongwe",
+    "continent": "Africa"
   },
   {
     "country_name": "Malaysia",
-    "capital_city": "Kuala Lumpur"
+    "capital_city": "Kuala Lumpur",
+    "continent": "Asia"
   },
   {
     "country_name": "Maldives",
-    "capital_city": "Malé"
+    "capital_city": "Malé",
+    "continent": "Asia"
   },
   {
     "country_name": "Mali",
-    "capital_city": "Bamako"
+    "capital_city": "Bamako",
+    "continent": "Africa"
   },
   {
     "country_name": "Malta",
-    "capital_city": "Valletta"
+    "capital_city": "Valletta",
+    "continent": "Europe"
   },
   {
     "country_name": "Marshall Islands",
-    "capital_city": "Majuro"
+    "capital_city": "Majuro",
+    "continent": "Oceania"
   },
   {
     "country_name": "Mauritania",
-    "capital_city": "Nouakchott"
+    "capital_city": "Nouakchott",
+    "continent": "Africa"
   },
   {
     "country_name": "Mauritius",
-    "capital_city": "Port Louis"
+    "capital_city": "Port Louis",
+    "continent": "Africa"
   },
   {
     "country_name": "Mexico",
-    "capital_city": "Mexico City"
+    "capital_city": "Mexico City",
+    "continent": "North America"
   },
   {
     "country_name": "Moldova",
-    "capital_city": "Chișinău"
+    "capital_city": "Chișinău",
+    "continent": "Europe"
   },
   {
     "country_name": "Monaco",
-    "capital_city": "Monaco"
+    "capital_city": "Monaco",
+    "continent": "Europe"
   },
   {
     "country_name": "Mongolia",
-    "capital_city": "Ulaanbaatar"
+    "capital_city": "Ulaanbaatar",
+    "continent": "Asia"
   },
   {
     "country_name": "Montenegro",
-    "capital_city": "Podgorica"
+    "capital_city": "Podgorica",
+    "continent": "Europe"
   },
   {
     "country_name": "Morocco",
-    "capital_city": "Rabat"
+    "capital_city": "Rabat",
+    "continent": "Africa"
   },
   {
     "country_name": "Mozambique",
-    "capital_city": "Maputo"
+    "capital_city": "Maputo",
+    "continent": "Africa"
   },
   {
     "country_name": "Myanmar",
-    "capital_city": "Naypyidaw"
+    "capital_city": "Naypyidaw",
+    "continent": "Asia"
   },
   {
     "country_name": "Namibia",
-    "capital_city": "Windhoek"
+    "capital_city": "Windhoek",
+    "continent": "Africa"
   },
   {
     "country_name": "Nauru",
-    "capital_city": "Yaren"
+    "capital_city": "Yaren",
+    "continent": "Oceania"
   },
   {
     "country_name": "Nepal",
-    "capital_city": "Kathmandu"
+    "capital_city": "Kathmandu",
+    "continent": "Asia"
   },
   {
     "country_name": "Netherlands",
-    "capital_city": "Amsterdam"
+    "capital_city": "Amsterdam",
+    "continent": "Europe"
   },
   {
     "country_name": "New Zealand",
-    "capital_city": "Wellington"
+    "capital_city": "Wellington",
+    "continent": "Oceania"
   },
   {
     "country_name": "Nicaragua",
-    "capital_city": "Managua"
+    "capital_city": "Managua",
+    "continent": "North America"
   },
   {
     "country_name": "Niger",
-    "capital_city": "Niamey"
+    "capital_city": "Niamey",
+    "continent": "Africa"
   },
   {
     "country_name": "Nigeria",
-    "capital_city": "Abuja"
+    "capital_city": "Abuja",
+    "continent": "Africa"
   },
   {
     "country_name": "North Korea",
-    "capital_city": "Pyongyang"
+    "capital_city": "Pyongyang",
+    "continent": "Asia"
   },
   {
     "country_name": "North Macedonia",
-    "capital_city": "Skopje"
+    "capital_city": "Skopje",
+    "continent": "Europe"
   },
   {
     "country_name": "Norway",
-    "capital_city": "Oslo"
+    "capital_city": "Oslo",
+    "continent": "Europe"
   },
   {
     "country_name": "Oman",
-    "capital_city": "Muscat"
+    "capital_city": "Muscat",
+    "continent": "Asia"
   },
   {
     "country_name": "Pakistan",
-    "capital_city": "Islamabad"
+    "capital_city": "Islamabad",
+    "continent": "Asia"
   },
   {
     "country_name": "Palau",
-    "capital_city": "Ngerulmud"
+    "capital_city": "Ngerulmud",
+    "continent": "Oceania"
   },
   {
     "country_name": "Panama",
-    "capital_city": "Panama City"
+    "capital_city": "Panama City",
+    "continent": "North America"
   },
   {
     "country_name": "Papua New Guinea",
-    "capital_city": "Port Moresby"
+    "capital_city": "Port Moresby",
+    "continent": "Oceania"
   },
   {
     "country_name": "Paraguay",
-    "capital_city": "Asunción"
+    "capital_city": "Asunción",
+    "continent": "South America"
   },
   {
     "country_name": "Peru",
-    "capital_city": "Lima"
+    "capital_city": "Lima",
+    "continent": "South America"
   },
   {
     "country_name": "Philippines",
-    "capital_city": "Manila"
+    "capital_city": "Manila",
+    "continent": "Asia"
   },
   {
     "country_name": "Poland",
-    "capital_city": "Warsaw"
+    "capital_city": "Warsaw",
+    "continent": "Europe"
   },
   {
     "country_name": "Portugal",
-    "capital_city": "Lisbon"
+    "capital_city": "Lisbon",
+    "continent": "Europe"
   },
   {
     "country_name": "Qatar",
-    "capital_city": "Doha"
+    "capital_city": "Doha",
+    "continent": "Asia"
   },
   {
     "country_name": "Romania",
-    "capital_city": "Bucharest"
+    "capital_city": "Bucharest",
+    "continent": "Europe"
   },
   {
     "country_name": "Russia",
-    "capital_city": "Moscow"
+    "capital_city": "Moscow",
+    "continent": "Europe"
   },
   {
     "country_name": "Rwanda",
-    "capital_city": "Kigali"
+    "capital_city": "Kigali",
+    "continent": "Africa"
   },
   {
     "country_name": "St Kitts and Nevis",
-    "capital_city": "Basseterre"
+    "capital_city": "Basseterre",
+    "continent": "North America"
   },
   {
     "country_name": "St Lucia",
-    "capital_city": "Castries"
+    "capital_city": "Castries",
+    "continent": "North America"
   },
   {
     "country_name": "St Vincent and the Grenadines",
-    "capital_city": "Kingstown"
+    "capital_city": "Kingstown",
+    "continent": "North America"
   },
   {
     "country_name": "Samoa",
-    "capital_city": "Apia"
+    "capital_city": "Apia",
+    "continent": "Oceania"
   },
   {
     "country_name": "San Marino",
-    "capital_city": "San Marino"
+    "capital_city": "San Marino",
+    "continent": "Europe"
   },
   {
     "country_name": "Sao Tome and Principe",
-    "capital_city": "São Tomé"
+    "capital_city": "São Tomé",
+    "continent": "Africa"
   },
   {
     "country_name": "Saudi Arabia",
-    "capital_city": "Riyadh"
+    "capital_city": "Riyadh",
+    "continent": "Asia"
   },
   {
     "country_name": "Senegal",
-    "capital_city": "Dakar"
+    "capital_city": "Dakar",
+    "continent": "Africa"
   },
   {
     "country_name": "Serbia",
-    "capital_city": "Belgrade"
+    "capital_city": "Belgrade",
+    "continent": "Europe"
   },
   {
     "country_name": "Seychelles",
-    "capital_city": "Victoria"
+    "capital_city": "Victoria",
+    "continent": "Africa"
   },
   {
     "country_name": "Sierra Leone",
-    "capital_city": "Freetown"
+    "capital_city": "Freetown",
+    "continent": "Africa"
   },
   {
     "country_name": "Singapore",
-    "capital_city": "Singapore"
+    "capital_city": "Singapore",
+    "continent": "Asia"
   },
   {
     "country_name": "Slovakia",
-    "capital_city": "Bratislava"
+    "capital_city": "Bratislava",
+    "continent": "Europe"
   },
   {
     "country_name": "Slovenia",
-    "capital_city": "Ljubljana"
+    "capital_city": "Ljubljana",
+    "continent": "Europe"
   },
   {
     "country_name": "Solomon Islands",
-    "capital_city": "Honiara"
+    "capital_city": "Honiara",
+    "continent": "Oceania"
   },
   {
     "country_name": "Somalia",
-    "capital_city": "Mogadishu"
+    "capital_city": "Mogadishu",
+    "continent": "Africa"
   },
   {
     "country_name": "South Africa",
-    "capital_city": "Pretoria"
+    "capital_city": "Pretoria",
+    "continent": "Africa"
   },
   {
     "country_name": "South Korea",
-    "capital_city": "Seoul"
+    "capital_city": "Seoul",
+    "continent": "Asia"
   },
   {
     "country_name": "South Sudan",
-    "capital_city": "Juba"
+    "capital_city": "Juba",
+    "continent": "Africa"
   },
   {
     "country_name": "Spain",
-    "capital_city": "Madrid"
+    "capital_city": "Madrid",
+    "continent": "Europe"
   },
   {
     "country_name": "Sri Lanka",
-    "capital_city": "Sri Jayawardenepura Kotte"
+    "capital_city": "Sri Jayawardenepura Kotte",
+    "continent": "Asia"
   },
   {
     "country_name": "State of Palestine",
-    "capital_city": "Ramallah"
+    "capital_city": "Ramallah",
+    "continent": "Asia"
   },
   {
     "country_name": "Sudan",
-    "capital_city": "Khartoum"
+    "capital_city": "Khartoum",
+    "continent": "Africa"
   },
   {
     "country_name": "Suriname",
-    "capital_city": "Paramaribo"
+    "capital_city": "Paramaribo",
+    "continent": "South America"
   },
   {
     "country_name": "Sweden",
-    "capital_city": "Stockholm"
+    "capital_city": "Stockholm",
+    "continent": "Europe"
   },
   {
     "country_name": "Switzerland",
-    "capital_city": "Bern"
+    "capital_city": "Bern",
+    "continent": "Europe"
   },
   {
     "country_name": "Syria",
-    "capital_city": "Damascus"
+    "capital_city": "Damascus",
+    "continent": "Asia"
   },
   {
     "country_name": "Taiwan",
-    "capital_city": "Taipei"
+    "capital_city": "Taipei",
+    "continent": "Asia"
   },
   {
     "country_name": "Tajikistan",
-    "capital_city": "Dushanbe"
+    "capital_city": "Dushanbe",
+    "continent": "Asia"
   },
   {
     "country_name": "Tanzania",
-    "capital_city": "Dodoma"
+    "capital_city": "Dodoma",
+    "continent": "Africa"
   },
   {
     "country_name": "Thailand",
-    "capital_city": "Bangkok"
+    "capital_city": "Bangkok",
+    "continent": "Asia"
   },
   {
     "country_name": "Timor-Leste",
-    "capital_city": "Dili"
+    "capital_city": "Dili",
+    "continent": "Asia"
   },
   {
     "country_name": "Togo",
-    "capital_city": "Lomé"
+    "capital_city": "Lomé",
+    "continent": "Africa"
   },
   {
     "country_name": "Tonga",
-    "capital_city": "Nukuʻalofa"
+    "capital_city": "Nukuʻalofa",
+    "continent": "Oceania"
   },
   {
     "country_name": "Trinidad and Tobago",
-    "capital_city": "Port of Spain"
+    "capital_city": "Port of Spain",
+    "continent": "North America"
   },
   {
     "country_name": "Tunisia",
-    "capital_city": "Tunis"
+    "capital_city": "Tunis",
+    "continent": "Africa"
   },
   {
     "country_name": "Turkey",
-    "capital_city": "Ankara"
+    "capital_city": "Ankara",
+    "continent": "Asia"
   },
   {
     "country_name": "Turkmenistan",
-    "capital_city": "Ashgabat"
+    "capital_city": "Ashgabat",
+    "continent": "Asia"
   },
   {
     "country_name": "Tuvalu",
-    "capital_city": "Funafuti"
+    "capital_city": "Funafuti",
+    "continent": "Oceania"
   },
   {
     "country_name": "Uganda",
-    "capital_city": "Kampala"
+    "capital_city": "Kampala",
+    "continent": "Africa"
   },
   {
     "country_name": "Ukraine",
-    "capital_city": "Kyiv"
+    "capital_city": "Kyiv",
+    "continent": "Europe"
   },
   {
     "country_name": "United Arab Emirates",
-    "capital_city": "Abu Dhabi"
+    "capital_city": "Abu Dhabi",
+    "continent": "Asia"
   },
   {
     "country_name": "United Kingdom",
-    "capital_city": "London"
+    "capital_city": "London",
+    "continent": "Europe"
   },
   {
     "country_name": "United States",
-    "capital_city": "Washington D.C."
+    "capital_city": "Washington D.C.",
+    "continent": "North America"
   },
   {
     "country_name": "Uruguay",
-    "capital_city": "Montevideo"
+    "capital_city": "Montevideo",
+    "continent": "South America"
   },
   {
     "country_name": "Uzbekistan",
-    "capital_city": "Tashkent"
+    "capital_city": "Tashkent",
+    "continent": "Asia"
   },
   {
     "country_name": "Vanuatu",
-    "capital_city": "Port Vila"
+    "capital_city": "Port Vila",
+    "continent": "Oceania"
   },
   {
     "country_name": "Vatican City",
-    "capital_city": "Vatican City"
+    "capital_city": "Vatican City",
+    "continent": "Europe"
   },
   {
     "country_name": "Venezuela",
-    "capital_city": "Caracas"
+    "capital_city": "Caracas",
+    "continent": "South America"
   },
   {
     "country_name": "Vietnam",
-    "capital_city": "Hanoi"
+    "capital_city": "Hanoi",
+    "continent": "Asia"
   },
   {
     "country_name": "Yemen",
-    "capital_city": "Sana'a"
+    "capital_city": "Sana'a",
+    "continent": "Asia"
   },
   {
     "country_name": "Zambia",
-    "capital_city": "Lusaka"
+    "capital_city": "Lusaka",
+    "continent": "Africa"
   },
   {
     "country_name": "Zimbabwe",
-    "capital_city": "Harare"
+    "capital_city": "Harare",
+    "continent": "Africa"
   }
 ]

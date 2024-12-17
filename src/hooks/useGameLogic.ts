@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect } from 'react'
 import { Country } from '../utilities/dataLoader'
 import { shuffleArray } from '../utilities/shuffleArray'
@@ -31,28 +32,54 @@ export function useGameLogic(countries: Country[]) {
     function nextQuestion() {
         const availableCountries = countries.filter(
             c => !gameState.usedCountries.has(c.country_name)
-        )
+        );
 
         if (availableCountries.length === 0) {
             // All guessed correctly
-            setGameState(prev => ({ ...prev, finished: true, winner: true }))
-            return
+            setGameState(prev => ({ ...prev, finished: true, winner: true }));
+            return;
         }
 
-        const randomCountry = availableCountries[Math.floor(Math.random() * availableCountries.length)]
-        const otherCountries = countries.filter(c => c.country_name !== randomCountry.country_name)
-        const distractors = shuffleArray(otherCountries)
-            .slice(0, 3)
-            .map(c => c.capital_city)
+        const randomCountry = availableCountries[Math.floor(Math.random() * availableCountries.length)];
 
-        const options = shuffleArray([randomCountry.capital_city, ...distractors])
+        // Attempt to get three distractors from the same continent
+        const sameContinent = countries.filter(
+            (c: any) => c.continent === randomCountry.continent && c.country_name !== randomCountry.country_name
+        );
+
+        let distractors: string[];
+        if (sameContinent.length >= 3) {
+            // We have enough from the same continent
+            distractors = shuffleArray(sameContinent)
+                .slice(0, 3)
+                .map(c => c.capital_city);
+        } else {
+            // Not enough from the same continent
+            // Use all from the same continent, then fill the rest from anywhere
+            const needed = 3;
+            const fromContinent = sameContinent.map(c => c.capital_city);
+            const shortage = needed - fromContinent.length;
+
+            // Pick random capitals from other countries, excluding the current one and those already chosen
+            const others = countries.filter(c =>
+                c.country_name !== randomCountry.country_name &&
+                !fromContinent.includes(c.capital_city) // exclude already chosen distractors
+            );
+
+            const fallbackDistractors = shuffleArray(others)
+                .slice(0, shortage)
+                .map(c => c.capital_city);
+
+            distractors = [...fromContinent, ...fallbackDistractors];
+        }
+
+        const options = shuffleArray([randomCountry.capital_city, ...distractors]);
 
         setGameState(prev => ({
             ...prev,
             currentCountry: randomCountry,
-            options,
-            // score stays the same
-        }))
+            options
+        }));
     }
 
     function selectCapital(capital: string) {
