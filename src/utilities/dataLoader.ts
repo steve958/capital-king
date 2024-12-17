@@ -5,24 +5,25 @@ export interface Country {
     flag: string; // new field
 }
 
-// loadCountries function remains the same, just ensure JSON now contains `flag` field.
+// Directly import the JSON data, which should be placed in your project's root or assets directory.
+import countriesData from '../assets/data/countries.json';
 
-
-export async function loadCountries(): Promise<Country[]> {
-    const response = await fetch(new URL('../assets/data/countries.json', import.meta.url));
-    if (!response.ok) {
-        throw new Error(`Failed to load countries data: ${response.statusText}`);
+// Validate the data once during module load (optional but recommended)
+if (!Array.isArray(countriesData)) {
+    throw new Error('Invalid JSON format: root is not an array');
+}
+for (const entry of countriesData) {
+    if (typeof entry.country_name !== 'string' ||
+        typeof entry.capital_city !== 'string' ||
+        typeof entry.continent !== 'string') {
+        throw new Error('Invalid JSON format: each entry must have country_name, capital_city, and continent');
     }
+}
 
-    const data = await response.json() as Country[];
-
-    for (const entry of data) {
-        if (typeof entry.country_name !== 'string' ||
-            typeof entry.capital_city !== 'string' ||
-            typeof entry.continent !== 'string') {
-            throw new Error('Invalid JSON format: each entry must have country_name, capital_city, and continent');
-        }
-    }
-
-    return data;
+/**
+ * Since data is now directly imported, no async/await is needed.
+ * Just export the already loaded countries data.
+ */
+export function loadCountries(): Country[] {
+    return countriesData;
 }

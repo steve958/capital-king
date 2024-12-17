@@ -23,7 +23,9 @@ const CountryCard: React.FC<CountryCardProps> = ({ country, options, onSelect, f
                         alt={`Flag of ${country}`}
                         style={{ width: '100%', maxHeight: '150px', objectFit: 'contain', marginBottom: '16px' }}
                         onError={() => setImgError(true)}
-                        loading="lazy" // helps with performance
+                        loading="lazy"
+                        width="300"  // Example width
+                        height="150" // Example height
                     />
                 ) : (
                     <div style={{ marginBottom: '16px', textAlign: 'center', color: '#999' }}>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Container, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import crown from '../assets/crown.png'
 
 const Home: React.FC = () => {
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
         >
             <Stack spacing={4} alignItems="center">
                 <Typography variant="h4">Capital King</Typography>
+                <img src={crown} alt="" />
                 <Button
                     variant="contained"
                     color="primary"
@@ -29,7 +31,7 @@ const Home: React.FC = () => {
                     color="secondary"
                     onClick={() => navigate("/high-scores")}
                 >
-                    View High Scores
+                    High Scores
                 </Button>
             </Stack>
         </Container>

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import CountryCard from "../components/CountryCard";
@@ -19,8 +18,11 @@ import Countdown, { CountdownRendererFn } from "react-countdown";
 
 const Game: React.FC = () => {
     const navigate = useNavigate();
-    const [countries, setCountries] = useState([]);
+
+    // Synchronous load of countries (no async needed)
+    const countries = loadCountries();
     const [loaded, setLoaded] = useState(false);
+
     const {
         currentCountry,
         options,
@@ -36,15 +38,15 @@ const Game: React.FC = () => {
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [transitionIn, setTransitionIn] = useState(true);
 
-    // Track whether the user answered the current question
+    // Tracks if the user answered the current question
     const [questionAnswered, setQuestionAnswered] = useState(false);
+
+    // Key to force re-render the countdown when a new question starts
     const [countdownKey, setCountdownKey] = useState(0);
 
     useEffect(() => {
-        loadCountries().then((data: any) => {
-            setCountries(data);
-            setLoaded(true);
-        });
+        // Data is already available synchronously
+        setLoaded(true);
     }, []);
 
     useEffect(() => {
@@ -53,7 +55,7 @@ const Game: React.FC = () => {
         }
     }, [finished, score]);
 
-    // When a new question loads and the game isn't finished, reset questionAnswered and start countdown
+    // Reset questionAnswered and start countdown when a new country loads (and game is not finished)
     useEffect(() => {
         if (currentCountry && !finished) {
             setQuestionAnswered(false);
@@ -64,11 +66,11 @@ const Game: React.FC = () => {
     const handleCloseSnackbar = () => setSnackbarOpen(false);
 
     const handleSelect = (capital: string) => {
-        // User selected an option, stop the countdown immediately
+        // Stop countdown by marking the question as answered
         setQuestionAnswered(true);
         selectCapital(capital);
+
         setSnackbarOpen(true);
-        // After selection, new question will slide in
         setTransitionIn(false);
         setTimeout(() => setTransitionIn(true), 1100);
     };
@@ -104,6 +106,7 @@ const Game: React.FC = () => {
         return <div>Loading question...</div>;
     }
 
+    // Custom renderer for the countdown to style it
     const renderer: CountdownRendererFn = ({ seconds, completed }) => {
         if (completed) {
             return null;
@@ -112,7 +115,7 @@ const Game: React.FC = () => {
                 <div
                     style={{
                         textAlign: "center",
-                        fontSize: "48px",
+                        fontSize: "95px",
                         marginTop: "20px",
                         transition: "all 0.5s ease-in-out",
                         color: seconds <= 2 ? "red" : "black",
@@ -130,7 +133,6 @@ const Game: React.FC = () => {
                 title="CapitalKing"
                 progress={{ current: usedCountries.size, total: totalCountries }}
             />
-
             <TransitionWrapper inProp={transitionIn}>
                 <CountryCard
                     country={currentCountry.country_name}
@@ -144,12 +146,14 @@ const Game: React.FC = () => {
                         date={Date.now() + 5000} // 5 seconds
                         renderer={renderer}
                         onComplete={() => {
-                            // When countdown finishes without user response, timeUp()
+                            // When time runs out and user hasn't answered, timeUp()
                             timeUp();
                         }}
                     />
                 )}
             </TransitionWrapper>
+
+            {/* Only show countdown if the user hasn't answered yet */}
 
             <ScoreSnackbar
                 open={snackbarOpen}
