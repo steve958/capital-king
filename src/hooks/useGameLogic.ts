@@ -100,9 +100,16 @@ export function useGameLogic(countries: Country[]) {
         }
     }
 
+    function timeUp() {
+        // Time is up and the user did not answer
+        // End the game with no winner (if not already finished)
+        setGameState(prev => ({ ...prev, finished: true, winner: false }))
+    }
+
     return {
         ...gameState,
         totalCountries: countries.length,
-        selectCapital
+        selectCapital,
+        timeUp
     }
 }

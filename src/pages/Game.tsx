@@ -15,6 +15,7 @@ import {
     Button,
 } from "@mui/material";
 import { updateHighScores } from "../utilities/highScores";
+import Countdown, { CountdownRendererFn } from "react-countdown";
 
 const Game: React.FC = () => {
     const navigate = useNavigate();
@@ -29,10 +30,15 @@ const Game: React.FC = () => {
         totalCountries,
         usedCountries,
         selectCapital,
+        timeUp,
     } = useGameLogic(countries);
 
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [transitionIn, setTransitionIn] = useState(true);
+
+    // Track whether the user answered the current question
+    const [questionAnswered, setQuestionAnswered] = useState(false);
+    const [countdownKey, setCountdownKey] = useState(0);
 
     useEffect(() => {
         loadCountries().then((data: any) => {
@@ -47,14 +53,24 @@ const Game: React.FC = () => {
         }
     }, [finished, score]);
 
+    // When a new question loads and the game isn't finished, reset questionAnswered and start countdown
+    useEffect(() => {
+        if (currentCountry && !finished) {
+            setQuestionAnswered(false);
+            setCountdownKey((prevKey) => prevKey + 1);
+        }
+    }, [currentCountry, finished]);
+
     const handleCloseSnackbar = () => setSnackbarOpen(false);
 
     const handleSelect = (capital: string) => {
+        // User selected an option, stop the countdown immediately
+        setQuestionAnswered(true);
         selectCapital(capital);
         setSnackbarOpen(true);
         // After selection, new question will slide in
         setTransitionIn(false);
-        setTimeout(() => setTransitionIn(true), 1100); // Wait for transitions
+        setTimeout(() => setTransitionIn(true), 1100);
     };
 
     if (!loaded) {
@@ -88,29 +104,60 @@ const Game: React.FC = () => {
         return <div>Loading question...</div>;
     }
 
-    if (currentCountry) {
-        return (
-            <>
-                <Header
-                    title="CapitalKing"
-                    progress={{ current: usedCountries.size, total: totalCountries }}
+    const renderer: CountdownRendererFn = ({ seconds, completed }) => {
+        if (completed) {
+            return null;
+        } else {
+            return (
+                <div
+                    style={{
+                        textAlign: "center",
+                        fontSize: "48px",
+                        marginTop: "20px",
+                        transition: "all 0.5s ease-in-out",
+                        color: seconds <= 2 ? "red" : "black",
+                    }}
+                >
+                    {seconds}
+                </div>
+            );
+        }
+    };
+
+    return (
+        <>
+            <Header
+                title="CapitalKing"
+                progress={{ current: usedCountries.size, total: totalCountries }}
+            />
+
+            <TransitionWrapper inProp={transitionIn}>
+                <CountryCard
+                    country={currentCountry.country_name}
+                    options={options}
+                    onSelect={handleSelect}
+                    flagUrl={currentCountry.flag}
                 />
-                <TransitionWrapper inProp={transitionIn}>
-                    <CountryCard
-                        country={currentCountry.country_name}
-                        options={options}
-                        onSelect={handleSelect}
-                        flagUrl={currentCountry.flag} // pass the flag here
+                {!questionAnswered && (
+                    <Countdown
+                        key={countdownKey}
+                        date={Date.now() + 5000} // 5 seconds
+                        renderer={renderer}
+                        onComplete={() => {
+                            // When countdown finishes without user response, timeUp()
+                            timeUp();
+                        }}
                     />
-                </TransitionWrapper>
-                <ScoreSnackbar
-                    open={snackbarOpen}
-                    message={`Score: ${score}`}
-                    onClose={handleCloseSnackbar}
-                />
-            </>
-        );
-    }
+                )}
+            </TransitionWrapper>
+
+            <ScoreSnackbar
+                open={snackbarOpen}
+                message={`Score: ${score}`}
+                onClose={handleCloseSnackbar}
+            />
+        </>
+    );
 };
 
 export default Game;
