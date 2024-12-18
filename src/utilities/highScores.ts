@@ -1,31 +1,35 @@
-interface HighScore {
-    score: number
-    date: string
+// highScores.tsx (Utilities)
+import { db } from './firestoreConfig';
+import { collection, addDoc, serverTimestamp, query, orderBy, limit, getDocs } from 'firebase/firestore';
+
+export interface HighScore {
+    score: number;
+    date: string;
+    playerId: string;
 }
 
-const STORAGE_KEY = 'capitalking_highscores'
+const scoresCollection = collection(db, 'scores');
 
-export function getHighScores(): HighScore[] {
-    const data = localStorage.getItem(STORAGE_KEY)
-    if (!data) return []
-    return JSON.parse(data)
+export async function getHighScores(): Promise<HighScore[]> {
+    const q = query(scoresCollection, orderBy('score', 'desc'), limit(8));
+    const snapshot = await getDocs(q);
+    const scores: HighScore[] = [];
+    snapshot.forEach(doc => {
+        const data = doc.data();
+        scores.push({
+            score: data.score,
+            date: data.date,
+            playerId: data.playerId
+        });
+    });
+    return scores;
 }
 
-export function saveHighScores(scores: HighScore[]) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(scores))
-}
-
-export function updateHighScores(newScore: number) {
-    const scores = getHighScores()
-
-    // Add new score
-    scores.push({ score: newScore, date: new Date().toISOString() })
-
-    // Sort by score desc
-    scores.sort((a, b) => b.score - a.score)
-
-    // Keep top 10
-    const top8 = scores.slice(0, 8)
-
-    saveHighScores(top8)
+export async function updateHighScores(newScore: number, playerId: string) {
+    await addDoc(scoresCollection, {
+        score: newScore,
+        playerId,
+        date: new Date().toISOString(),
+        timestamp: serverTimestamp()
+    });
 }

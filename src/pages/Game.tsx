@@ -1,3 +1,4 @@
+// Game.tsx
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import CountryCard from "../components/CountryCard";
@@ -6,20 +7,20 @@ import TransitionWrapper from "../components/TransitionWrapper";
 import { useGameLogic } from "../hooks/useGameLogic";
 import { useNavigate } from "react-router-dom";
 import { loadCountries } from "../utilities/dataLoader";
+import { updateHighScores } from "../utilities/highScores";
+import Countdown, { CountdownRendererFn } from "react-countdown";
 import {
     Container,
     Card,
     CardContent,
     Typography,
     Button,
+    TextField,
+    Stack
 } from "@mui/material";
-import { updateHighScores } from "../utilities/highScores";
-import Countdown, { CountdownRendererFn } from "react-countdown";
 
 const Game: React.FC = () => {
     const navigate = useNavigate();
-
-    // Synchronous load of countries (no async needed)
     const countries = loadCountries();
     const [loaded, setLoaded] = useState(false);
 
@@ -37,25 +38,19 @@ const Game: React.FC = () => {
 
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [transitionIn, setTransitionIn] = useState(true);
-
-    // Tracks if the user answered the current question
     const [questionAnswered, setQuestionAnswered] = useState(false);
-
-    // Key to force re-render the countdown when a new question starts
     const [countdownKey, setCountdownKey] = useState(0);
 
+    // For player ID input
+    const [playerId, setPlayerId] = useState('');
+    const [hasSubmitted, setHasSubmitted] = useState(false);
+    const [idError, setIdError] = useState(false);
+
     useEffect(() => {
-        // Data is already available synchronously
         setLoaded(true);
     }, []);
 
-    useEffect(() => {
-        if (finished) {
-            updateHighScores(score);
-        }
-    }, [finished, score]);
-
-    // Reset questionAnswered and start countdown when a new country loads (and game is not finished)
+    // Reset questionAnswered and start countdown on new country
     useEffect(() => {
         if (currentCountry && !finished) {
             setQuestionAnswered(false);
@@ -66,47 +61,14 @@ const Game: React.FC = () => {
     const handleCloseSnackbar = () => setSnackbarOpen(false);
 
     const handleSelect = (capital: string) => {
-        // Stop countdown by marking the question as answered
         setQuestionAnswered(true);
         selectCapital(capital);
-
         setSnackbarOpen(true);
         setTransitionIn(false);
         setTimeout(() => setTransitionIn(true), 1100);
     };
 
-    if (!loaded) {
-        return <div>Loading...</div>;
-    }
-
-    if (finished) {
-        return (
-            <Container style={{ marginTop: "40px" }}>
-                <Card>
-                    <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                        {winner ? (
-                            <Typography variant="h5">
-                                Winner! Perfect Score: {score}
-                            </Typography>
-                        ) : (
-                            <Typography variant="h5">
-                                Game Over! Your Score: {score}
-                            </Typography>
-                        )}
-                        <Button variant="contained" onClick={() => navigate("/")} sx={{ width: 'fit-content' }} >
-                            Back to Home
-                        </Button>
-                    </CardContent>
-                </Card>
-            </Container>
-        );
-    }
-
-    if (!currentCountry) {
-        return <div>Loading question...</div>;
-    }
-
-    // Custom renderer for the countdown to style it
+    // Custom renderer for the countdown
     const renderer: CountdownRendererFn = ({ seconds, completed }) => {
         if (completed) {
             return null;
@@ -127,6 +89,83 @@ const Game: React.FC = () => {
         }
     };
 
+    if (!loaded) {
+        return <div>Loading...</div>;
+    }
+
+    if (finished) {
+        // Once finished, we show a form to enter player ID if not submitted yet
+        return (
+            <Container style={{ marginTop: "40px" }}>
+                <Card>
+                    <CardContent
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}
+                    >
+                        {winner ? (
+                            <Typography variant="h5">
+                                Winner! Perfect Score: {score}
+                            </Typography>
+                        ) : (
+                            <Typography variant="h5">
+                                Game Over! Your Score: {score}
+                            </Typography>
+                        )}
+
+                        {!hasSubmitted ? (
+                            <Stack spacing={2} sx={{ marginTop: '20px', width: '100%', maxWidth: '300px' }}>
+                                <Typography variant="body1">
+                                    Please enter a 4-character player ID:
+                                </Typography>
+                                <TextField
+                                    variant="outlined"
+                                    value={playerId}
+                                    onChange={(e) => {
+                                        setPlayerId(e.target.value.toUpperCase());
+                                        if (e.target.value.length === 4) {
+                                            setIdError(false);
+                                        }
+                                    }}
+                                    error={idError}
+                                    helperText={idError ? "Player ID must be exactly 4 characters" : ""}
+                                    inputProps={{ maxLength: 4, style: { textTransform: 'uppercase' } }}
+                                />
+                                <Button
+                                    variant="contained"
+                                    onClick={async () => {
+                                        if (playerId.length !== 4) {
+                                            setIdError(true);
+                                            return;
+                                        }
+                                        await updateHighScores(score, playerId);
+                                        setHasSubmitted(true);
+                                    }}
+                                >
+                                    Submit
+                                </Button>
+                            </Stack>
+                        ) : (
+                            <Stack spacing={2} sx={{ marginTop: '20px' }}>
+                                <Typography variant="body1">Thank you! Your score has been recorded.</Typography>
+                                <Button variant="contained" onClick={() => navigate("/")}>
+                                    Back to Home
+                                </Button>
+                            </Stack>
+                        )}
+                    </CardContent>
+                </Card>
+            </Container>
+        );
+    }
+
+    if (!currentCountry) {
+        return <div>Loading question...</div>;
+    }
+
     return (
         <>
             <Header
@@ -146,14 +185,11 @@ const Game: React.FC = () => {
                         date={Date.now() + 5000} // 5 seconds
                         renderer={renderer}
                         onComplete={() => {
-                            // When time runs out and user hasn't answered, timeUp()
                             timeUp();
                         }}
                     />
                 )}
             </TransitionWrapper>
-
-            {/* Only show countdown if the user hasn't answered yet */}
 
             <ScoreSnackbar
                 open={snackbarOpen}

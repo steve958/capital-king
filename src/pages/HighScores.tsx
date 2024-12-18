@@ -1,11 +1,19 @@
-import React from 'react'
+// HighScores.tsx
+import React, { useEffect, useState } from 'react'
 import { Container, Typography, List, ListItem, ListItemText, Button } from '@mui/material'
-import { getHighScores } from '../utilities/highScores'
+import { getHighScores, HighScore } from '../utilities/highScores'
 import { useNavigate } from 'react-router-dom'
 
 const HighScores: React.FC = () => {
-    const navigate = useNavigate()
-    const scores = getHighScores()
+    const navigate = useNavigate();
+    const [scores, setScores] = useState<HighScore[]>([]);
+
+    useEffect(() => {
+        (async () => {
+            const fetchedScores = await getHighScores();
+            setScores(fetchedScores);
+        })();
+    }, []);
 
     return (
         <Container style={{ marginTop: '20px', justifyContent: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -15,7 +23,11 @@ const HighScores: React.FC = () => {
             <List>
                 {scores.map((s, index) => (
                     <ListItem key={index}>
-                        <ListItemText primary={`Score: ${s.score}`} secondary={`Date: ${new Date(s.date).toLocaleString()}`} sx={{ margin: '5px' }} />
+                        <ListItemText
+                            primary={`Score: ${s.score} - Player: ${s.playerId}`}
+                            secondary={`Date: ${new Date(s.date).toLocaleString()}`}
+                            sx={{ margin: '5px' }}
+                        />
                     </ListItem>
                 ))}
             </List>
@@ -24,4 +36,4 @@ const HighScores: React.FC = () => {
     )
 }
 
-export default HighScores
+export default HighScores;
