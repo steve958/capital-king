@@ -16,7 +16,7 @@ const Home: React.FC = () => {
     return (
         <Container
             sx={{
-                marginTop: "40px",
+                marginTop: "80px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
@@ -34,6 +34,7 @@ const Home: React.FC = () => {
                     Start Game
                 </Button>
                 <Button
+                    sx={{ color: 'white' }}
                     variant="contained"
                     color="secondary"
                     onClick={() => navigate("/high-scores")}
@@ -41,8 +42,9 @@ const Home: React.FC = () => {
                     High Scores
                 </Button>
                 <Button
+                    sx={{ color: 'white' }}
                     variant="contained"
-                    color="error"
+                    color="secondary"
                     onClick={handleCloseGame}
                 >
                     Close Game
