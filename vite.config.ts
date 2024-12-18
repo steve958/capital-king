@@ -15,17 +15,17 @@ export default defineConfig({
         background_color: '#f5f5f5',
         icons: [
           {
-            src: 'icons/icon-192.png',
-            sizes: '192x192',
-            type: 'image/png'
+            src: "/icons/icon-128x128.png",
+            sizes: "128x128",
+            type: "image/png"
           },
           {
-            src: 'icons/icon-512.png',
+            src: '/icons/icon512_rounded.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: 'icons/icon-maskable.png',
+            src: '/icons/icon512_maskable.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable'
