@@ -8,6 +8,7 @@ const Home: React.FC = () => {
     const [closeAttempted, setCloseAttempted] = useState(false);
 
     const handleCloseGame = () => {
+        window.open("", "_self");
         window.close();
         // If window.close() doesn't work, we show a message.
         setCloseAttempted(true);
@@ -50,7 +51,7 @@ const Home: React.FC = () => {
                     Close Game
                 </Button>
                 {closeAttempted && (
-                    <Alert severity="info" sx={{ mt: 2 }}>
+                    <Alert severity="info" sx={{ position: 'absolute' }}>
                         If the game did not close automatically, please close the browser tab manually.
                     </Alert>
                 )}
