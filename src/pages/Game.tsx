@@ -132,7 +132,7 @@ const Game: React.FC = () => {
                                     }}
                                     error={idError}
                                     helperText={idError ? "Player ID must be exactly 5 characters" : ""}
-                                    inputProps={{ maxLength: 4, style: { textTransform: 'uppercase' } }}
+                                    inputProps={{ maxLength: 5, style: { textTransform: 'uppercase' } }}
                                 />
                                 <Button
                                     variant="contained"
