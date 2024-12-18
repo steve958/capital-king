@@ -124,25 +124,25 @@ const Game: React.FC = () => {
                         {!hasSubmitted ? (
                             <Stack spacing={2} sx={{ marginTop: '20px', width: '100%', maxWidth: '300px' }}>
                                 <Typography variant="body1">
-                                    Please enter a 4-character player ID:
+                                    Please enter a 5-character player ID:
                                 </Typography>
                                 <TextField
                                     variant="outlined"
                                     value={playerId}
                                     onChange={(e) => {
                                         setPlayerId(e.target.value.toUpperCase());
-                                        if (e.target.value.length === 4) {
+                                        if (e.target.value.length === 5) {
                                             setIdError(false);
                                         }
                                     }}
                                     error={idError}
-                                    helperText={idError ? "Player ID must be exactly 4 characters" : ""}
-                                    inputProps={{ maxLength: 4, style: { textTransform: 'uppercase' } }}
+                                    helperText={idError ? "Player ID must be exactly 5 characters" : ""}
+                                    inputProps={{ maxLength: 5, style: { textTransform: 'uppercase' } }}
                                 />
                                 <Button
                                     variant="contained"
                                     onClick={async () => {
-                                        if (playerId.length !== 4) {
+                                        if (playerId.length !== 5) {
                                             setIdError(true);
                                             return;
                                         }
