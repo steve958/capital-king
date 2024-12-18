@@ -1,4 +1,3 @@
-// Game.tsx
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import CountryCard from "../components/CountryCard";
@@ -16,7 +15,8 @@ import {
     Typography,
     Button,
     TextField,
-    Stack
+    Stack,
+    CircularProgress
 } from "@mui/material";
 
 const Game: React.FC = () => {
@@ -41,13 +41,14 @@ const Game: React.FC = () => {
     const [questionAnswered, setQuestionAnswered] = useState(false);
     const [countdownKey, setCountdownKey] = useState(0);
 
-    // For player ID input
     const [playerId, setPlayerId] = useState('');
     const [hasSubmitted, setHasSubmitted] = useState(false);
     const [idError, setIdError] = useState(false);
 
     useEffect(() => {
-        setLoaded(true);
+        // Simulate data loading delay if needed
+        // For now, just setLoaded on next tick
+        setTimeout(() => setLoaded(true), 100);
     }, []);
 
     // Reset questionAnswered and start countdown on new country
@@ -68,7 +69,6 @@ const Game: React.FC = () => {
         setTimeout(() => setTransitionIn(true), 1100);
     };
 
-    // Custom renderer for the countdown
     const renderer: CountdownRendererFn = ({ seconds, completed }) => {
         if (completed) {
             return null;
@@ -90,11 +90,16 @@ const Game: React.FC = () => {
     };
 
     if (!loaded) {
-        return <div>Loading...</div>;
+        // Show a loading spinner while data (countries) is loading
+        return (
+            <Container style={{ marginTop: "40px", textAlign: 'center' }}>
+                <CircularProgress />
+                <Typography variant="body1" sx={{ marginTop: '16px' }}>Loading game data...</Typography>
+            </Container>
+        );
     }
 
     if (finished) {
-        // Once finished, we show a form to enter player ID if not submitted yet
         return (
             <Container style={{ marginTop: "40px" }}>
                 <Card>
@@ -119,25 +124,25 @@ const Game: React.FC = () => {
                         {!hasSubmitted ? (
                             <Stack spacing={2} sx={{ marginTop: '20px', width: '100%', maxWidth: '300px' }}>
                                 <Typography variant="body1">
-                                    Please enter a 5-character player ID:
+                                    Please enter a 4-character player ID:
                                 </Typography>
                                 <TextField
                                     variant="outlined"
                                     value={playerId}
                                     onChange={(e) => {
                                         setPlayerId(e.target.value.toUpperCase());
-                                        if (e.target.value.length === 5) {
+                                        if (e.target.value.length === 4) {
                                             setIdError(false);
                                         }
                                     }}
                                     error={idError}
-                                    helperText={idError ? "Player ID must be exactly 5 characters" : ""}
-                                    inputProps={{ maxLength: 5, style: { textTransform: 'uppercase' } }}
+                                    helperText={idError ? "Player ID must be exactly 4 characters" : ""}
+                                    inputProps={{ maxLength: 4, style: { textTransform: 'uppercase' } }}
                                 />
                                 <Button
                                     variant="contained"
                                     onClick={async () => {
-                                        if (playerId.length !== 5) {
+                                        if (playerId.length !== 4) {
                                             setIdError(true);
                                             return;
                                         }
@@ -163,7 +168,12 @@ const Game: React.FC = () => {
     }
 
     if (!currentCountry) {
-        return <div>Loading question...</div>;
+        return (
+            <Container style={{ marginTop: "40px", textAlign: 'center' }}>
+                <CircularProgress />
+                <Typography variant="body1" sx={{ marginTop: '16px' }}>Loading question...</Typography>
+            </Container>
+        );
     }
 
     return (

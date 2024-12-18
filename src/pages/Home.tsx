@@ -1,10 +1,17 @@
-import React from "react";
-import { Button, Container, Stack, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { Button, Container, Stack, Typography, Alert } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import crown from '../assets/crown.png'
 
 const Home: React.FC = () => {
     const navigate = useNavigate();
+    const [closeAttempted, setCloseAttempted] = useState(false);
+
+    const handleCloseGame = () => {
+        window.close();
+        // If window.close() doesn't work, we show a message.
+        setCloseAttempted(true);
+    }
 
     return (
         <Container
@@ -33,6 +40,18 @@ const Home: React.FC = () => {
                 >
                     High Scores
                 </Button>
+                <Button
+                    variant="contained"
+                    color="error"
+                    onClick={handleCloseGame}
+                >
+                    Close Game
+                </Button>
+                {closeAttempted && (
+                    <Alert severity="info" sx={{ mt: 2 }}>
+                        If the game did not close automatically, please close the browser tab manually.
+                    </Alert>
+                )}
             </Stack>
         </Container>
     );
