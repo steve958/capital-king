@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './utilities/firestoreConfig'; // Adjust path as needed
