@@ -18,10 +18,13 @@ body {
   /* Prevent horizontal scrolling on mobile */
   font-family: 'Roboto', sans-serif;
   background-color: #e7e3e3;
-  text-shadow: 1px 1px 1px black;
   /* Light gray background as per minimalistic design */
   color: #EF8E03;
   /* Text color for readability */
+}
+
+h4 {
+  text-shadow: 1px 1px 1px black;
 }
 
 /* Set a mobile-first base font size */
@@ -169,4 +172,18 @@ button {
 .shape:hover {
   transform: scale(1.5) translateX(-50%);
   transition: transform 0.3s ease;
+}
+
+.left-crown {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  left: -50px;
+}
+
+.right-crown {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  right: -50px;
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container, Typography, List, ListItem, ListItemText, Button, CircularProgress } from '@mui/material'
 import { getHighScores, HighScore } from '../utilities/highScores'
 import { useNavigate } from 'react-router-dom'
+import crown from '../../public/king.svg'
 
 const HighScores: React.FC = () => {
     const navigate = useNavigate();
@@ -33,6 +34,8 @@ const HighScores: React.FC = () => {
                                 secondary={`Date: ${new Date(s.date).toLocaleString()}`}
                                 sx={{ margin: '5px' }}
                             />
+                            {s.score >= 197 && <img src={crown} className='left-crown' />}
+                            {s.score >= 197 && <img src={crown} className='right-crown' />}
                         </ListItem>
                     ))}
                 </List>
