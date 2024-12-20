@@ -25,30 +25,9 @@ const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="animated-gradient">
-              <Home />
-            </div>
-          }
-        />
-        <Route
-          path="/game"
-          element={
-            <div className="animated-gradient">
-              <Game />
-            </div>
-          }
-        />
-        <Route
-          path="/high-scores"
-          element={
-            <div className="animated-gradient">
-              <HighScores />
-            </div>
-          }
-        />
+        <Route path="/" element={<Home />} />
+        <Route path="/game" element={<Game />} />
+        <Route path="/high-scores" element={<HighScores />} />
       </Routes>
     </Router>
   );
