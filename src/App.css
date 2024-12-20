@@ -21,9 +21,9 @@ body {
   /* Light gray background as per minimalistic design */
   color: #EF8E03;
   /* Text color for readability */
-  background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #ffffff, #c2e9fb, #a1c4fd);
+  background: linear-gradient(90deg, #a1c4fd, #c2e9fb, #ffffff, #c2e9fb, #a1c4fd);
   background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
+  /* animation: gradientAnimation 15s ease infinite; */
   position: relative;
   overflow: hidden;
   height: 100vh;
@@ -108,4 +108,8 @@ button {
   height: auto;
   position: absolute;
   right: -50px;
+}
+
+span {
+  font-weight: 700 !important;
 }
