@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Container, Typography, List, ListItem, ListItemText, Button, CircularProgress } from '@mui/material'
 import { getHighScores, HighScore } from '../utilities/highScores'
 import { useNavigate } from 'react-router-dom'
-import crown from '../../public/king.svg'
+import crown from '/king.svg'
 
 const HighScores: React.FC = () => {
     const navigate = useNavigate();
