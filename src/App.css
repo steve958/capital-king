@@ -18,8 +18,9 @@ body {
   /* Prevent horizontal scrolling on mobile */
   font-family: 'Roboto', sans-serif;
   background-color: #e7e3e3;
+  text-shadow: 1px 1px 1px black;
   /* Light gray background as per minimalistic design */
-  color: #333333;
+  color: #EF8E03;
   /* Text color for readability */
 }
 
@@ -70,3 +71,102 @@ button {
 
 /* Since we rely heavily on MUI for component styling, we keep custom CSS minimal.
    Additional styles can be added here as necessary for specific layout tweaks. */
+
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #ffffff, #c2e9fb, #a1c4fd);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Shape Animations */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  90% {
+    opacity: 1;
+    transform: translateY(-50px) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1.5);
+  }
+}
+
+.shape {
+  position: absolute;
+  bottom: -100px;
+  animation: fadeInOut linear forwards;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  /* No additional styling needed */
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 30px solid;
+  background: none;
+}
+
+.star {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 20px solid;
+  position: relative;
+}
+
+.star:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid;
+  background: none;
+}
+
+.shape:hover {
+  transform: scale(1.5) translateX(-50%);
+  transition: transform 0.3s ease;
+}

@@ -1,3 +1,4 @@
+// Game.tsx
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import CountryCard from "../components/CountryCard";
@@ -6,7 +7,7 @@ import TransitionWrapper from "../components/TransitionWrapper";
 import { useGameLogic } from "../hooks/useGameLogic";
 import { useNavigate } from "react-router-dom";
 import { loadCountries } from "../utilities/dataLoader";
-import { updateHighScores } from "../utilities/highScores";
+import { attemptUpdateHighScores } from "../utilities/highScores"; // Updated import
 import Countdown, { CountdownRendererFn } from "react-countdown";
 import {
     Container,
@@ -44,6 +45,7 @@ const Game: React.FC = () => {
     const [playerId, setPlayerId] = useState('');
     const [hasSubmitted, setHasSubmitted] = useState(false);
     const [idError, setIdError] = useState(false);
+    const [highScoreStatus, setHighScoreStatus] = useState<'success' | 'failure' | null>(null); // New state
 
     useEffect(() => {
         // Simulate data loading delay if needed
@@ -146,7 +148,13 @@ const Game: React.FC = () => {
                                             setIdError(true);
                                             return;
                                         }
-                                        await updateHighScores(score, playerId);
+                                        // Attempt to update high scores
+                                        const isHighScore = await attemptUpdateHighScores(score, playerId);
+                                        if (isHighScore) {
+                                            setHighScoreStatus('success');
+                                        } else {
+                                            setHighScoreStatus('failure');
+                                        }
                                         setHasSubmitted(true);
                                     }}
                                 >
@@ -155,7 +163,13 @@ const Game: React.FC = () => {
                             </Stack>
                         ) : (
                             <Stack spacing={2} sx={{ marginTop: '20px' }}>
-                                <Typography variant="body1">Thank you! Your score has been recorded.</Typography>
+                                {highScoreStatus === 'success' ? (
+                                    <Typography variant="body1">🎉 Congratulations! Your score is among the top 8!</Typography>
+                                ) : highScoreStatus === 'failure' ? (
+                                    <Typography variant="body1">😕 Sorry, your score did not make it to the top 8.</Typography>
+                                ) : (
+                                    <Typography variant="body1">Thank you! Your score has been recorded.</Typography>
+                                )}
                                 <Button variant="contained" onClick={() => navigate("/")}>
                                     Back to Home
                                 </Button>

@@ -23,6 +23,7 @@ const Home: React.FC = () => {
                 justifyContent: "center",
                 height: "100vw",
             }}
+
         >
             <Stack spacing={4} alignItems="center">
                 <Typography variant="h4">Capital King</Typography>
