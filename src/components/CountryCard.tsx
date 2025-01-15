@@ -11,6 +11,14 @@ interface CountryCardProps {
 const CountryCard: React.FC<CountryCardProps> = ({ country, options, onSelect, flagUrl }) => {
     const [imgError, setImgError] = useState(false)
 
+    const flagStyle = {
+        width: '100%',
+        maxHeight: '150px',
+        height: '150px',
+        objectFit: 'contain' as const,
+        marginBottom: '16px',
+    }
+
     return (
         <Card style={{ margin: '16px' }}>
             <CardContent>
@@ -21,15 +29,25 @@ const CountryCard: React.FC<CountryCardProps> = ({ country, options, onSelect, f
                     <img
                         src={flagUrl}
                         alt={`Flag of ${country}`}
-                        style={{ width: '100%', maxHeight: '150px', objectFit: 'contain', marginBottom: '16px' }}
+                        style={flagStyle}
                         onError={() => setImgError(true)}
                         loading="lazy"
-                        width="300"  // Example width
-                        height="150" // Example height
                     />
                 ) : (
-                    <div style={{ marginBottom: '16px', textAlign: 'center', color: '#999' }}>
-                        <Typography variant="body2">Flag not available</Typography>
+                    <div
+                        style={{
+                            ...flagStyle,
+                            backgroundColor: '#f5f5f5',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            border: '1px solid #ddd',
+                            borderRadius: '4px'
+                        }}
+                    >
+                        <Typography variant="body1" color="textSecondary">
+                            🏳️ Flag not available
+                        </Typography>
                     </div>
                 )}
                 <Stack spacing={2}>
